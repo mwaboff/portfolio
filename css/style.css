@@ -238,7 +238,8 @@ body {
 }
 
 #navbar__logo {
-  color: black;
+  color: var(--accent-color);
+  font-family: var(--font-style__title);
   text-decoration: none;
 }
 
@@ -258,10 +259,7 @@ body {
 
 #navbar__hamburger {
   color: white;
-  display: inline-block;
   text-decoration: none;
-  text-align: right;
-  min-width: 100%;
 }
 
 .navbar__hamburger-close { content: "X" !important; }
