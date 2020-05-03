@@ -69,4 +69,4 @@ class Navbar {
 }
 
 
-bar = new Navbar("navbar");
+new Navbar("navbar");

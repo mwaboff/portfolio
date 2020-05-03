@@ -11,5 +11,7 @@
     --background-color-1: #e7e7e7;
     --success-color: #8BC34A;
     --error-color: #FF4081;
+
+    --background-gradient: linear-gradient(to right, rgb(38, 47, 179), rgb(53, 52, 178), rgb(69, 58, 177), rgb(84, 63, 176), rgb(99, 69, 175), rgb(114, 74, 174), rgb(130, 80, 173), rgb(145, 85, 172), rgb(160, 91, 171), rgb(175, 96, 170), rgb(191, 102, 169), rgb(206, 107, 168));
 }
 

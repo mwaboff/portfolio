@@ -216,6 +216,8 @@ body {
 
 #header {
   background: var(--primary-color);
+  background-image: var(--background-gradient);
+
   height: var(--navbar-height);
   position: fixed;
   width: 100%;
@@ -245,6 +247,9 @@ body {
 
 .navbar__link {
   background: var(--primary-color);
+
+  background-image: var(--background-gradient);
+
   color: var(--light-text);
   padding: var(--navbar-link-mobile-padding);
   text-decoration: none;
@@ -284,6 +289,7 @@ body {
   }
 
   .navbar__link {
+    background: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -309,9 +315,14 @@ body {
 /* Hero Section */
 #home {
   background: var(--primary-color);
+
+
+
+  background-image: var(--background-gradient);
+  
   color: var(--light-text);
   max-height: 100vh;
-  min-height: calc(100vh / 2);
+  min-height: calc(100vh / 1.5);
 
 }
 
@@ -376,7 +387,7 @@ body {
 
 .project-tldr__list li:before { content: "∙ "; }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 600px) {
   .project-tile { text-align: left; }
 
   .project-info { padding: 0; }
