@@ -33,7 +33,7 @@ Media Breakpoints
     --global-width: 400px;
     --font-size__title: 32px;
     --font-size__sub-title: 22px;
-    --font-size__main: 18px;
+    --font-size__main: 22px;
   }
 }
 
@@ -264,7 +264,7 @@ body {
 
 .navbar__hamburger-close { content: "X"; }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .navbar__links {
     position: static;
     flex-direction: row;
