@@ -1,11 +1,10 @@
 class Navbar {
     constructor() {
-        this.navbar = document.getElementById("navbar");
+        this.body = document.getElementsByTagName("body")[0];
         this.hamburger = document.getElementById("navbar__hamburger");
         this.navbar_wrapper = document.getElementById("navbar__link-wrapper");
         this.navbar_links = Array.from(document.getElementsByClassName("navbar__link"));
         this.navbar_logo = document.getElementById("navbar__logo");
-        console.log(this.navbar_links);
         this.hidden_close_div = document.getElementById("navbar__full_page_close");
 
         this.createResponsiveMenuBinds();
@@ -21,7 +20,10 @@ class Navbar {
     
     createNavLinkBinds() {
         this.navbar_links.map( 
-            link => link.addEventListener("click", () => this.closeMenu())
+            link => link.addEventListener("click", () => {
+                this.closeMenu();
+                
+            })
         );
     };
 
@@ -41,6 +43,7 @@ class Navbar {
             this.navbar_wrapper.classList.remove("hidden-menu");
             this.hidden_close_div.classList.remove("hidden");
             this.hamburger.innerText = "X";
+            this.toggleClass(this.body, "stop-scroll");
         }
     }
 
@@ -49,6 +52,7 @@ class Navbar {
             this.navbar_wrapper.classList.add("hidden-menu");
             this.hidden_close_div.classList.add("hidden");
             this.hamburger.innerText = "☰";
+            this.toggleClass(this.body, "stop-scroll");
         }
     }
 

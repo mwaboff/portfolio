@@ -42,7 +42,7 @@ Media Breakpoints
     --global-width: 500px; 
     --font-size__title: 40px;
     --font-size__sub-title: 28px;
-    --font-size__main: 20px;
+    --font-size__main: 18px;
   }
 }
 
@@ -99,6 +99,7 @@ body {
 
 .hidden { display: none; }
 
+.stop-scroll { overflow: hidden; }
 
 
 
@@ -167,7 +168,6 @@ body {
   border-radius: var(--border-radius);
   color: inherit;
   display: inline-block;
-  /* font-weight: bold; */
   padding: 14px;
   text-align: center;
   text-decoration: none;
@@ -222,7 +222,6 @@ body {
   top: 0;
   user-select: none;
   text-decoration: none;
-  /* color: black; */
   z-index: 1000;
 }
 
@@ -250,7 +249,6 @@ body {
   text-decoration: none;
   transition-duration: var(--transition-duration);
   z-index: 1000;
-
 }
 
 .navbar__link:hover {
