@@ -264,7 +264,7 @@ body {
 
 .navbar__hamburger-close { content: "X"; }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 900px) {
   .navbar__links {
     position: static;
     flex-direction: row;
