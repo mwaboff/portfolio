@@ -197,6 +197,8 @@ body {
 
 .btn__dark-text { color: var(--primary-color); }
 
+.btn__dark-hover:hover { background-color: var(--background-color-2) }
+
 .btn__big { width: var(--big-button-width); }
 
 @media screen and (min-width: 600px) {
@@ -323,7 +325,7 @@ body {
 
 #home {
   /* background: var(--primary-color); */
-  background: url("../media/pics/wilmu_background.jpg");
+  background: url("../media/pics/bay_background.jpg");
   background-size: cover;
   background-position: 80% 0%;
   position: relative;
@@ -365,7 +367,7 @@ body {
 /* Project Section */
 :root {
   --project-image-row-mode-width: 400px;
-  --project-image-side-padding: 5px;
+  --project-image-side-padding: 30px;
   --project-tile-padding: 150px;
   --project-info-padding: 16px;
 }
@@ -387,12 +389,12 @@ body {
   margin: var(--project-tile-padding) 0 0 0;
 }
 
-.project-image {  padding: 0  0 var(--project-image-side-padding) 0; }
+/* .project-image {  padding: 0  0 var(--project-image-side-padding) 0; } */
 
-.project-image img { max-width: var(--global-width); }
+.project-image img { max-width: 100%; }
 
 .project-info { 
-  padding: 0 var(--project-image-side-padding);
+  padding: var(--project-image-side-padding) 0 0 0;
   max-width: 100%; 
 }
 
@@ -427,11 +429,6 @@ body {
   :root { --project-tile-padding: 250px; }
   .project-tile { text-align: left; }
 
-  .project-info { padding: 0; }
-
-  .project-image {
-    /* width: var(--project-image-row-mode-width); */
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -444,18 +441,16 @@ body {
 
   .project-tile:nth-of-type(even) { flex-direction: row-reverse; }
 
-  .project-info {
+  .project-tile .project-info {
     padding: 0 0 0 var(--project-image-side-padding);
-    width: calc(var(--global-width) - var(--project-image-row-mode-width) - var(--project-image-side-padding));
+    width: calc(var(--global-width) - var(--project-image-row-mode-width));
+  }
 
+  .project-tile:nth-child(odd) > .project-info {
+    padding: 0 var(--project-image-side-padding) 0 0;
   }
 
   .project-image { max-width: var( --project-image-row-mode-width); }
-
-  .project-tile:nth-of-type(even) .project-info {
-    /* padding: 0 var(--project-image-side-padding) 0 0; */
-    /* padding: 0 0 0 var(--project-image-side-padding); */
-  }
 
   .project-tldr__list { flex-direction: row; }
 }

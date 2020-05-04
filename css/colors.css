@@ -1,14 +1,15 @@
 :root {
     --primary-color: #424254;
-    --accent-color: rgb(255, 205, 139);
-    --accent-color-1: rgb(224, 182, 127);
+    --accent-color: #ffcd8b;
+    --accent-color-1: #f8a83f;
     --dark-text: #212121;
     --secondary-text: #757575;
     --light-text: #FAFAFA;
     --divider-color: #BDBDBD;
     --background-color-dark: #333333;
     --background-color: #FAFAFA;
-    --background-color-1: #e7e7e7;
+    --background-color-1: #d6d6d6;
+    --background-color-2: #505050;
     --success-color: #8BC34A;
     --error-color: #FF4081;
 
