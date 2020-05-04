@@ -1,0 +1,34 @@
+/* 
+Media Breakpoints
+320px
+480px
+600px
+768px
+900px
+1024px
+1200px 
+*/
+
+:root {
+  --case-study-image-max-height: 300px;
+  --case-study-image-max-width: var(--global-width);
+}
+#case-study {
+  text-align: left;
+}
+
+.case-study > .btn-group {
+  padding: 0 0 15px 0;
+}
+
+.pic-tldr__wrapper {
+  flex-direction: column-reverse;
+}
+
+.case-study__old_images {
+  text-align: center;
+}
+.case-study__old_images img {
+  max-height: var(--case-study-image-max-height);
+  max-width: var(--case-study-image-max-width);
+}

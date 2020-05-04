@@ -33,7 +33,7 @@ Media Breakpoints
     --global-width: 400px;
     --font-size__title: 32px;
     --font-size__sub-title: 22px;
-    --font-size__main: 22px;
+    --font-size__main: 18px;
   }
 }
 
@@ -42,7 +42,7 @@ Media Breakpoints
     --global-width: 500px; 
     --font-size__title: 40px;
     --font-size__sub-title: 28px;
-    --font-size__main: 18px;
+    --font-size__main: 20px;
   }
 }
 
@@ -74,6 +74,7 @@ body {
   color: var(--dark-text);
   font: var(--font-size__main) var(--font-style__standard);
   text-align: center;
+  line-height: 1.6;
 }
 
 .global-width { width: var(--global-width); }
@@ -101,6 +102,9 @@ body {
 
 .stop-scroll { overflow: hidden; }
 
+.z-idx-10 { z-index: 10; }
+
+.z-idx-5 { z-index: 5; }
 
 
 /* Sections */
@@ -216,7 +220,7 @@ body {
 
 #header {
   background: var(--primary-color);
-  background-image: var(--background-gradient);
+  /* background-image: var(--background-gradient); */
 
   height: var(--navbar-height);
   position: fixed;
@@ -248,7 +252,7 @@ body {
 .navbar__link {
   background: var(--primary-color);
 
-  background-image: var(--background-gradient);
+  /* background-image: var(--background-gradient); */
 
   color: var(--light-text);
   padding: var(--navbar-link-mobile-padding);
@@ -279,7 +283,6 @@ body {
   width: 100%;
   z-index: 50;
 }
-
 
 @media screen and (min-width: 900px) {
   #navbar__link-wrapper {
@@ -313,12 +316,22 @@ body {
 
 
 /* Hero Section */
+:root {
+  --background-overlay-opacity: 0.85;
+  --background-overlay-blur: 2px;
+}
+
 #home {
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
+  background: url("../media/pics/wilmu_background.jpg");
+  background-size: cover;
+  background-position: 80% 0%;
+  position: relative;
+  line-height: 1.2;
 
 
 
-  background-image: var(--background-gradient);
+  /* background-image: var(--background-gradient); */
   
   color: var(--light-text);
   max-height: 100vh;
@@ -326,10 +339,25 @@ body {
 
 }
 
-.info-text div { padding: 8px 0; } 
+.hero__bkg-overlay {
+  background: var(--primary-color);
+  position: absolute;
+  opacity: var(--background-overlay-opacity);
+  backdrop-filter: blur(var(--background-overlay-blur));
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.info-text { z-index: 10; }
+.info-text div { 
+  padding: 8px 0;
+} 
 
 @media screen and (min-width: 600px) {
   #home { text-align: left; }
+  #hero {   background-position: right top;  }
+
+
 }
 
 
@@ -338,7 +366,7 @@ body {
 :root {
   --project-image-row-mode-width: 400px;
   --project-image-side-padding: 5px;
-  --project-tile-padding: 50px;
+  --project-tile-padding: 150px;
   --project-info-padding: 16px;
 }
 
@@ -349,6 +377,14 @@ body {
   margin: var(--project-tile-padding) 0;
   width: 100%;
   justify-content: space-between;
+}
+
+.project-tile:first-of-type {
+  margin: 50px 0 var(--project-tile-padding) 0;
+}
+
+.project-tile:last-of-type {
+  margin: var(--project-tile-padding) 0 0 0;
 }
 
 .project-image {  padding: 0  0 var(--project-image-side-padding) 0; }
@@ -388,6 +424,7 @@ body {
 .project-tldr__list li:before { content: "∙ "; }
 
 @media screen and (min-width: 600px) {
+  :root { --project-tile-padding: 250px; }
   .project-tile { text-align: left; }
 
   .project-info { padding: 0; }
