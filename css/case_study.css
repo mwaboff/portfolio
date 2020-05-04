@@ -44,6 +44,11 @@ Media Breakpoints
   margin: 0 0 var(--case-study-p-padding) 0;
 }
 
-#case-study p {
+#case-study p, #case-study ol, #case-study ul, #case-study pre, #case-study blockquote {
   margin: 0 0 var(--case-study-p-padding) 0;
+}
+
+
+#case-study ol, #case-study ul {
+  padding-left: 40px;
 }

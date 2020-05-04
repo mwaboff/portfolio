@@ -50,7 +50,7 @@
           <div class="project-tldr__title">Notable Points</div>
           <ul class="project-tldr__list">
             <li>Responsive, mobile-first</li>
-            <li>No dependencies</li>
+            <li>No template</li>
             <li>Wireframe with Balsamiq</li>
             <li>Mock up with Figma</li>
           </ul>
@@ -101,7 +101,13 @@
 
 
     <h3 class="h3 case-study__section-title">Design</h3>
-    <p>Before writing a single line of code on my latest version, I committed myself to these two rules: <br>1. Create a wireframe and/or full mockup of any page before writing a single line of code.<br>2. Design and develop for the mobile view first.</p>
+    <p>Recently, I watched <a href="https://youtu.be/0ohtVzCSHqs" target="_blank">this video by Kevin Powell</a> where he made this observation:</p>
+    <blockquote>You have a responsive website by default. You only lose this responsiveness when you build in things that prevent it from being responsive...  Take advantage of that. After that, you build your more complex layout within your media query.</blockquote>
+    <p>This helped make responsiveness click in my mind. I committed myself to these two rules:</p>
+    <ol>
+      <li>Create a wireframe and/or full mockup of any page before writing a single line of code.</li>
+      <li>Design and develop for the mobile view first.</li>
+    </ol>
     <p>I chose two tools I had some experience with previously. First, I selected Balsamiq, an easy to use wireframing tool that focuses the user on only the layout of the site. For my mockups, I selected Figma, a popular tool in the industry.</p>
     <div class="case-study__images">
       <img src="../media/projects/portfolio/wireframe_cover.png">
@@ -114,17 +120,69 @@
     <p>With these designs in place, the implementation of the site itself went very quickly. Whenever I had an issue or felt I was losing control of the design, it was easy to check the mockup and re-orient myself.</p>
     <p>In the end, the mobile-first approach and the design-first rules worked out very well and left me with a manageable design that was straight forward to implmement.</p>
     
-    <h3 class="h3 case-study__section-title">Takeaways</h3>
-    <p>1. Always start front-end design with a wireframe and mockup.</p>
-    <p>2. Flex boxes and CSS variables are life savers.</p>    
+    <h3 class="h3 case-study__section-title">Difficulties</h3>
+    <p>One of the greatest difficulties I ran into during this project was trying the handling of repeated code. In order to fit my portfolio into the requirements for the course I created it for, I was limited by the class restriction that my project must be a multi page app. Because of this and a fast approaching deadline, I made two decisions early on: I won't use a front-end framework (like React or Backbone) or a backend server.</p>
+    <p>These two self-imposed restrictions had their own benefits and disadvantages. Without a breaking up a simple website like this into smaller pages, I could limit the number of page requests the user would make, potentially speeding up the site. In reality, any small performance gain was wiped out by the high quality images loaded on every page and development was slowed down.</p>
+    <p>A lack of a backend also prevented me from adding additional features, such as site usage statistics and an image API to give me more control providing optimized images. However it had the very large benefit of letting me being able to easily host the site on Github without having to worry about maintaining a server over years.</p>
 
+    <h3 class="h3 case-study__section-title">Cool Code</h3>
+    <p>By avoiding any pre-made template and not relying on Bootstrap for layout management, I learned how to bend flex boxes to my whim. Vertically centering components was no longer an concern. Here are the CSS snippets I made to give myself deep control over the layout:</p>
+    <pre>
+/* Flex Layout */
+.flex { display: flex; }
+
+.flex__column { flex-direction: column; }
+
+.flex__row { flex-direction: row; }
+
+.flex__center-full { 
+  align-items: center;
+  justify-content: center;
+}
+
+.flex__center-vertical {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex__center-horizontal {
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex__space-between {
+  align-content: space-between;
+  justify-content: space-between;
+}</pre>
+    <p>Along with a separate class limiting the max width of any content, I was able to easily center the content in the middle of the page while providing clear margins on either side. This helps keep the page easily scannable.</p>
+
+    <p>I also found how useful CSS variables really are. While I had originally determined a theme while creating my mockup, I found that the colors I chose did not work well not many screens. Being able to simply change one variable saved me a large headache when changing color schemes across the entire project. This is all there is to completely control my theming:</p>
+    <pre>
+:root {
+  --primary-color: #424254;
+  --accent-color: #ffcd8b;
+  --accent-color-1: #f8a83f;
+  --dark-text: #212121;
+  --secondary-text: #757575;
+  --light-text: #FAFAFA;
+  --divider-color: #BDBDBD;
+  --background-color-dark: #333333;
+  --background-color: #FAFAFA;
+  --background-color-1: #d6d6d6;
+  --background-color-2: #505050;
+}</pre>
+
+    <h3 class="h3 case-study__section-title">Takeaways</h3>
+    <ol>
+      <li>Always start front-end design with a wireframe and mockup.</li>
+      <li>Flex boxes and CSS variables are life savers.</li>
+    </ol>
+    
     <img class="case-study-image" src="../media/projects/portfolio/portfolio_on_desk_mockup_large.png" alt="">
     <div class="btn-group flex flex__center-full">
       <a href="https://mwaboff.github.io/portfolio-redux/" class="btn btn__primary btn__dark-text btn__big" target="_blank"><span>Live Site</span></a>
       <a href="https://github.com/mwaboff/portfolio-redux" class="btn btn__big" target="_blank">View Code</a>
     </div>
-
- 
 
   </div>
 </section>

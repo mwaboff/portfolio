@@ -79,6 +79,18 @@ body {
 
 .global-width { width: var(--global-width); }
 
+pre {
+  background: var(--background-color-dark);
+  color: var(--light-text);
+  padding: 15px;
+  border-radius: var(--border-radius);
+}
+
+blockquote {
+  padding: 0 0 0 15px;
+  border-left: 5px solid var(--background-color-1);
+}
+
 
 
 
