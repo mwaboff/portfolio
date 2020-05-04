@@ -12,6 +12,7 @@ Media Breakpoints
 :root {
   --case-study-image-max-height: 300px;
   --case-study-image-max-width: var(--global-width);
+  --case-study-p-padding: 50px;
 }
 #case-study {
   text-align: left;
@@ -25,10 +26,24 @@ Media Breakpoints
   flex-direction: column-reverse;
 }
 
-.case-study__old_images {
+.case-study__images {
   text-align: center;
 }
-.case-study__old_images img {
+.case-study__images img {
   max-height: var(--case-study-image-max-height);
   max-width: var(--case-study-image-max-width);
+}
+
+.case-study__hero_section {
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+#case-study img {
+  max-width: var(--case-study-image-max-width);
+  margin: 0 0 var(--case-study-p-padding) 0;
+}
+
+#case-study p {
+  margin: 0 0 var(--case-study-p-padding) 0;
 }
