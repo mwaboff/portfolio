@@ -403,7 +403,10 @@ blockquote {
 
 /* .project-image {  padding: 0  0 var(--project-image-side-padding) 0; } */
 
-.project-image img { max-width: 100%; }
+.project-image img {
+  max-height: 300px; 
+  max-width: 100%;
+}
 
 .project-info { 
   padding: var(--project-image-side-padding) 0 0 0;
@@ -489,8 +492,13 @@ blockquote {
   padding: var(--button-group-padding) 0;
 }
 
+@media screen and (min-width: 600px) {
+  #contact .btn-group .btn:not(:last-of-type) { margin: 0 0 var(--btn-group-separation) 0; }
+}
 @media screen and (min-width: 900px) {
   #contact .btn-group { flex-direction: row !important; }
+
+  #contact .btn-group .btn:not(:last-of-type) { margin: 0 var(--btn-group-separation) 0 0; }
 }
 
 
