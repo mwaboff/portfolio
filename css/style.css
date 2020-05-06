@@ -84,6 +84,8 @@ pre {
   color: var(--light-text);
   padding: 15px;
   border-radius: var(--border-radius);
+  max-width: var(--global-width);
+  overflow-x: auto;
 }
 
 blockquote {
