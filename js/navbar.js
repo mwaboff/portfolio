@@ -1,13 +1,17 @@
 class Navbar {
     constructor() {
         this.body = document.getElementsByTagName("body")[0];
+        this.header = document.getElementById("header");
         this.hamburger = document.getElementById("navbar__hamburger");
         this.navbar_wrapper = document.getElementById("navbar__link-wrapper");
         this.navbar_links = Array.from(document.getElementsByClassName("navbar__link"));
         this.navbar_logo = document.getElementById("navbar__logo");
         this.hidden_close_div = document.getElementById("navbar__full_page_close");
+        this.home_section = document.getElementById("home");
+        this.bkg_change_location = 0;
 
-        this.createResponsiveMenuBinds();
+        if (this.navbar_links.length > 0) this.createResponsiveMenuBinds();
+        if (this.home_section) this.createScrollBinds();
     }
 
     createResponsiveMenuBinds() {
@@ -17,19 +21,32 @@ class Navbar {
         this.createNavLinkBinds();
         console.log(this.isMenuOpen());
     }
-    
-    createNavLinkBinds() {
-        this.navbar_links.map( 
-            link => link.addEventListener("click", () => {
-                this.closeMenu();
-                
-            })
-        );
-    };
 
+    createScrollBinds() {
+        let child_after_home = this.home_section.nextElementSibling;
+        if (child_after_home) {
+            this.bkg_change_location = child_after_home.offsetTop;
+            window.addEventListener("scroll", () => this.toggleBackground());
+        }
+    }
+    
     toggleMenu() {
         if (this.isMenuOpen()) this.closeMenu();
         else this.openMenu();
+    }
+
+    createNavLinkBinds() {
+        this.navbar_links.map( 
+            link => link.addEventListener("click", () => this.closeMenu())
+        );
+    };
+
+    toggleBackground() {
+        if (window.pageYOffset >= this.bkg_change_location) {
+            this.header.classList.remove("navbar__clear-background");
+        } else {
+            this.header.classList.add("navbar__clear-background");
+        }
     }
 
     isMenuOpen() {
@@ -70,3 +87,5 @@ class Navbar {
 
 
 new Navbar("navbar");
+
+

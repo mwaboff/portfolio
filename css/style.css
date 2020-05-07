@@ -239,16 +239,15 @@ blockquote {
 }
 
 #header {
-  background: var(--primary-color);
-  /* background-image: var(--background-gradient); */
-
+  background-color: var(--primary-color);
   height: var(--navbar-height);
   position: fixed;
   width: 100%;
+  text-decoration: none;
   top: 0;
   user-select: none;
-  text-decoration: none;
   z-index: 1000;
+  transition-duration: var(--transition-duration);
 }
 
 #navbar__link-wrapper {
@@ -302,6 +301,11 @@ blockquote {
   height: 100%;
   width: 100%;
   z-index: 50;
+}
+
+.navbar__clear-background {
+  background-color: rgba(66, 66, 84, 0) !important;
+  transition-duration: var(--transition-duration);
 }
 
 @media screen and (min-width: 1024px) {
