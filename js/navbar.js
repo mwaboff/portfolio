@@ -11,7 +11,12 @@ class Navbar {
         this.bkg_change_location = 0;
 
         if (this.navbar_links.length > 0) this.createResponsiveMenuBinds();
-        if (this.home_section) this.createScrollBinds();
+
+        if (this.home_section) {
+            this.createScrollBinds();
+        } else {
+            this.header.classList.remove("navbar__clear-background");  // If there is no hero section, ensure that there is a background on the navbar.
+        }
     }
 
     createResponsiveMenuBinds() {
