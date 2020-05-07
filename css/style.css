@@ -93,6 +93,10 @@ blockquote {
   border-left: 5px solid var(--background-color-1);
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 
 
 
@@ -438,6 +442,7 @@ blockquote {
 .project-tldr__list li {
   padding: 3px 0;
   min-width: 50%;
+  
 }
 
 .project-tldr__list li:before { content: "∙ "; }
@@ -448,8 +453,9 @@ blockquote {
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .project-tldr__list { flex-direction: row; }
+  .project-tldr__list li { max-width: 50%; }
 }
 
 
