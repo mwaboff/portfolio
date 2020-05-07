@@ -304,7 +304,7 @@ blockquote {
   z-index: 50;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
   #navbar__link-wrapper {
     position: static;
     flex-direction: row;
