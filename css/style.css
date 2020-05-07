@@ -250,6 +250,11 @@ blockquote {
   transition-duration: var(--transition-duration);
 }
 
+.navbar__clear-background {
+  background-color: rgba(66, 66, 84, 0.25) !important;
+  transition-duration: var(--transition-duration);
+}
+
 #navbar__link-wrapper {
   display: flex;
   flex-direction: column;
@@ -303,10 +308,7 @@ blockquote {
   z-index: 50;
 }
 
-.navbar__clear-background {
-  background-color: rgba(66, 66, 84, 0) !important;
-  transition-duration: var(--transition-duration);
-}
+
 
 @media screen and (min-width: 1024px) {
   #navbar__link-wrapper {
