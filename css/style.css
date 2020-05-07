@@ -344,6 +344,7 @@ blockquote {
 #home {
   /* background: var(--primary-color); */
   background: url("../media/pics/bay_background.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-position: 80% 0%;
   position: relative;
