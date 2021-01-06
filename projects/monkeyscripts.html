@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Michael Aboff - Projects - Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/colors.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/case_study.css">
+
+</head>
+<body>
+
+<div id="navbar__full_page_close" class="hidden"></div>
+<header id="header" class="flex flex__center-full navbar__clear-background">
+  <div class="flex flex__center-horizontal">
+  <div class="global-width flex flex__space-between">
+    <a href="../index.html#" id="navbar__logo">Michael Aboff</a>
+    <div id="navbar">
+      <a href="javascript:void(0)" id="navbar__hamburger">☰</a>
+      <div id="navbar__link-wrapper" class="hidden-menu">
+        <a href="../index.html#" class="navbar__link">Home</a>
+        <a href="../index.html#projects" class="navbar__link">Projects</a>
+        <a href="../index.html#about" class="navbar__link">About</a>
+        <a href="../index.html#contact" class="navbar__link">Contact</a>
+        <a href="../media/michael_aboff_resume.pdf" target="_blank" class="navbar__link">Resume</a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<section id="home" class="section flex flex__center-full flex__column case-study__hero_section"  style="background-image: url('../media/projects/monkeyscripts/monkeyscripts-wood-desk-mockup.png')">
+  <div class="hero__bkg-overlay z-idx-5"></div>
+  <div class="global-width  z-idx-10">
+    <div class="info-text">
+      <div class="hero__title">
+        <h1 class="h1"> <span class="emphasized">MonkeyScripts.org</span> <span class="inline-block">- Case Study</span></h1>
+        <div class="project-title-wrap">
+          <div class="">PHP, Laravel, Javascript, React.js, MySQL, HTML5, CSS3, Bootstrap</div>
+        </div>
+      </div>
+      <div class="project-info flex flex__center-vertical">
+        
+        <div class="project-tldr">
+          <div class="project-tldr__title">Notable Points</div>
+          <ul class="project-tldr__list">
+            <li>Recommendation System</li>
+            <li>Modern education techniques</li>
+            <li>Responsive design from scratch</li>
+            <li>82-page Master's Thesis</li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <a href="https://monkeyscripts.org" class="btn btn__primary btn__dark-text btn__big" target="_blank"><span>Live Site</span></a>
+          <a href="../media/projects/monkeyscripts/monkeyscripts_thesis.pdf" class="btn btn__big btn__dark-hover" target="_blank">Full Thesis</a>
+          <a href="https://github.com/mwaboff/monkeyscripts" class="btn btn__big btn__dark-hover" target="_blank">View Code</a>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="case-study" class="section flex flex__center-full flex__column">
+  <div class="global-width">
+    
+    <h3 class="h3 case-study__section-title">Intro</h3>
+    <p>I have used and made user scripts for almost a decade and they have been a big part of <a href="../projects/hfes.html">my growth as a developer</a>. When deciding on my Master's thesis, I was excited to research and build something that could help the community.</p>
+
+    <h3 class="h3 case-study__section-title">What are User Scripts?</h3>
+    <p>User scripts are small cross-browser add-ons that can be used to enhance a user’s web browsing experience. These scripts are used to provide quick and unique customizations that directly modify the website a user is visiting. Created by the community, user scripts can add features ranging from adding detailed summary information from a review website into a favorite video streaming service to replacing all images with pictures of cats.</p>
+
+    <h3 class="h3 case-study__section-title">The Problem</h3>
+    <p>The growth of the user script community has stagnated over the past 10 years as official browser extensions have gained popularity instead.</p>
+    <div class="case-study__images">
+      <img src="../media/projects/monkeyscripts/google_trends_userscript_userscripts_user-script_user-scripts.png" alt="">
+    </div>
+
+    <p>After interviewing technical and non-technical people of whom some were aware of what user scripts are, I realized there are two core problems:</p>
+    <ol>
+      <li><b>User Aquisition:</b> There are no easy to follow and understand explanations of what user scripts are and how to use them in a way that resonates with non technical users. To solve this I built an interactive tutorial that uses modern adult learning techniques, not something ever done in the user script community before.</li>
+      <li><b>User Retention:</b> To convince a user to try to learn, you have to provide obvious motivation as to why they would want to stay. To solve this, I built a collaborative filter recommendation system to provide relevant, personalized results.</li>
+    </ol>
+
+    <h3 class="h3 case-study__section-title">User Aquisition - Interactive Tutorial</h3>
+    <p>To prepare for this project, I heavily researched how people learn complicated topics. Focusing on adult learning techniques, I found there are a few tips that can be used to determine what is going on:</p>
+    <ul>
+      <li>Keep the lesson concise.</li>
+      <li>Let users practice what they are taught.</li>
+      <li>Use rewards as motivation.</li>
+      <li>Accommodate the three different learning styles: visual, auditory, and kinesthetic.</li>
+    </ul>
+    <p>To teach users, I created a tutorial that accommodated each of these above steps. First I broke instructions down to 2 steps: 1) Installing the tool needed for user scripts to work; 2) finding and installing scripts. For the first, the instructions for installing the script are </p>
+    <div class="case-study__images">
+      <img src="../media/projects/monkeyscripts/monkeyscripts_tutorial_pic.png" alt="">
+    </div>
+    <p>Check out the <a href="https://monkeyscripts.org/tutorial" target="_blank">live tutorial here</a>.</p>
+
+    <h3 class="h3 case-study__section-title">User Retention - Recommendation System</h3>
+    <p>Previous repository websites </p>
+
+
+
+    <img class="case-study-image" src="../media/projects/monkeyscripts/1984-apple-monkeyscripts.png" alt="">
+
+
+    <div class="btn-group flex flex__center-full">
+      <a href="https://monkeyscripts.org" class="btn btn__primary btn__dark-text btn__big" target="_blank"><span>Live Site</span></a>
+      <a href="../media/projects/monkeyscripts/monkeyscripts_thesis.pdf" class="btn btn__big btn__dark-hover" target="_blank">Full Thesis</a>
+      <a href="https://github.com/mwaboff/monkeyscripts" class="btn btn__big btn__dark-hover" target="_blank">View Code</a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer id="footer" class="section flex flex__center-full flex__column">
+  <!-- <hr class="footer-hr"> -->
+  <p>© 2020 Michael Aboff.</p>
+  <p>Crafted from scratch with <span class="emphasized"><3</span>.</p>
+</footer>
+
+<script src="../js/navbar.js"></script>
+</body>
+</html>

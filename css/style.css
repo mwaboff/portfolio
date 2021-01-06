@@ -58,7 +58,9 @@ Media Breakpoints
   :root { --global-width: 1000px; }
 }
 
-
+@media screen and (min-width: 1500px) {
+  :root { --global-width: 1200px; }
+}
 
 
 /* General */
