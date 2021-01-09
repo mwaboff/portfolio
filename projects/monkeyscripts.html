@@ -86,23 +86,35 @@
     </ol>
 
     <h3 class="h3 case-study__section-title">User Aquisition - Interactive Tutorial</h3>
-    <p>To prepare for this project, I heavily researched how people learn complicated topics. Focusing on adult learning techniques, I found there are a few tips that can be used to determine what is going on:</p>
+    <p>Current research into effective adult learning techniques encourage teachers to follow these four core principles:</p>
     <ul>
       <li>Keep the lesson concise.</li>
       <li>Let users practice what they are taught.</li>
       <li>Use rewards as motivation.</li>
       <li>Accommodate the three different learning styles: visual, auditory, and kinesthetic.</li>
     </ul>
-    <p>To teach users, I created a tutorial that accommodated each of these above steps. First I broke instructions down to 2 steps: 1) Installing the tool needed for user scripts to work; 2) finding and installing scripts. For the first, the instructions for installing the script are provided to the user in the form of a video, as well as written. For the second, I developed a test user script that will immediately provide positive feedback as soon as it's installed. These two easy steps provide a modern method of teaching users how to find and use user scripts compared to the wall-of-text solutions from previous </p>
+    <p>To teach users, I created a tutorial that accommodated each of the above. To keep things concise, I broke the system down into two steps: 1) Install a user script manager; 2) find and install a script. To accommodate different visual and auditory learning styles, I included a video explaining how to install a user script manager. Where my tutorial differs than others, is that I created a script that I instructed users to install. When this kinesthetic task is completed, users will be immediately rewarded in the tutorial itself by updating the site itself. Constant feedback from early testers found this easier to understand than traditional wall-of-text tutorials other sites provide. You can check out the <a href="https://monkeyscripts.org/tutorial" target="_blank">live tutorial here</a>.</p>
     <div class="case-study__images">
       <img src="../media/projects/monkeyscripts/monkeyscripts_tutorial_pic.png" alt="">
     </div>
-    <p>Check out the <a href="https://monkeyscripts.org/tutorial" target="_blank">live tutorial here</a>.</p>
 
-    <h3 class="h3 case-study__section-title">User Retention - Recommendation System</h3>
-    <p>Other user script hosting sites only provide a few simple methods of discovering new scripts: search, a top download list, and a list sorted by top raiting. As their collection of scripts grew really large, it would result in it being difficult to find any script that matters to the user. To fight this I looked to </p>
+    <h3 class="h3 case-study__section-title">User Retention - Content Discovery</h3>
+    <p>New and existing users need to be provided a reason to continue learning and using any product. This is especially true with a niche and technical tool like user scripts. The best way to provide this motivation is by clearly showing users scripts that are relevant to them. Other user script hosting sites simply provide a list that can be sorted by top downloads or top rated, but often these are filled with complicated or irrelevant scripts. I believe that implementing a suggestion system, just like successful companies like Netflix and Amazon, would help users find things that are most relevant to them and convince them to stay.</p>
+    <p>I decided to use a similar type of recommendation system to the large companies: an item-based collaborative filtering recommendation system. This system records every user's interaction with scripts. If a user downloads a script, the interaction is rated higher than a simple visit to the description. The system will then compare every script with eachother and, based off of the users that interacted with both scripts, calculate a simularity score.</p>
+    <p>To calculate this score, I decided to use the Pearson Correlation, a common similarity comparison algorithm. It will take the previously mentioned interaction scores and provide a correlation value representing similarity between -1 and 1.</p>
+    <div class="case-study__images">
+      <img src="../media/projects/monkeyscripts/pearson_correlation_formula.png" alt="" style="max-width: 60%">
+    </div>
+    <p>The correlation is than multiplied by combined interaction scores to provide a final similarity raiting.</p>
+    <p>When a user signs into MonkeyScripts, the website looks at their previously visited and downloaded scripts. From these, it will select several and generate suggestions based off of the scripts most similar to each one. These are then presented to the user as recommended scripts (with a little bit of randomness to keep things interesting).</p>
+    
+    <p>To provide a simplified example of the result: Imagine Alice likes apples, bananas, and pears. Bob knows he likes apples and bananas. Since we know from Alice that people who like apples and bananas also like pears, we would suggest that Bob try a pear to see if he enjoys it as well. The more data points we have, the more accurate this system becomes.</p>
 
-
+    <h3 class="h3 case-study__section-title">Takeaway</h3>
+    <ol>
+      <li>There is a lot more to making and promoting a new website than simply adding cool and modern features. SEO, advertising, content creation, etc takes different skills and a lot of time.</li>
+      <li>Simply based off of the feedback received, this project proved to me that incorporating modern learning and content discovery techniques is a feasible method of lowering the bar of entry for niche and difficult-to-understand communities.</li>
+    </ol>
 
     <img class="case-study-image" src="../media/projects/monkeyscripts/1984-apple-monkeyscripts.png" alt="">
 
