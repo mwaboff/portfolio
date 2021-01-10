@@ -471,7 +471,7 @@ blockquote {
 @media screen and (min-width: 1200px) {
   .project-tile { flex-direction: row; }
 
-  .project-tile:nth-of-type(even) { flex-direction: row-reverse; }
+  .project-tile:nth-of-type(odd) { flex-direction: row-reverse; }
 
   .project-tile .project-info {
     padding: 0 0 0 var(--project-image-side-padding);

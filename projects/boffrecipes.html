@@ -48,14 +48,14 @@
         <div class="project-tldr">
           <div class="project-tldr__title">Notable Points</div>
           <ul class="project-tldr__list">
-            <li>Built an MVC framework from scratch</li>
-            <li>Created a Database interface</li>
-            <li>Wrote an Image Processing API</li>
-            <li>Responsive Design</li>
+            <li>Custom image API</li>
+            <li>User authentication</li>
+            <li>Responsive design</li>
           </ul>
         </div>
         <div class="btn-group">
-          <a href="https://github.com/mwaboff/boff-bakery-recipes" class="btn btn__primary btn__dark-text btn__big" target="_blank">View Code</a>
+          <a href="https://recipe.mwaboff.com/" class="btn btn__primary btn__dark-text btn__big" target="_blank"><span>Live Site</span></a>
+          <a href="https://github.com/mwaboff/BoffRecipes" class="btn  btn__big" target="_blank">View Code</a>    
         </div>
     </div>
       
@@ -69,35 +69,9 @@
     
     <h3 class="h3 case-study__section-title">Intro</h3>
     <p>I love food. Specifically, I love the experience of creating food and how it has the tendency of bringing people together. This is one of the ways how my grandmother and I can bond. So when deciding on a web app to build, it was an easy choice.</p>
-    <p>I really wanted to challenge myself with this project from a backend perspective. I have used popular MVC frameworks in the past, Django and Ruby on Rails, but I always struggled with fully grasping the model. So I decided to build one myself, without any 3rd party tools.</p>
     <div class="case-study__images">
       <img src="../media/projects/recipe-sharing/boffbakery_transparent_bkg_floating_samsung_mockup.png" alt="">
     </div>
-
-    <h3 class="h3 case-study__section-title">Custom Model-View-Controller Framework</h3>
-    <p>Having had experience with the MVC design pattern in the past, I knew the basics behind it's structure. For any of you unaware, MVC stands for Model-View-Controller. Each of these terms identify the 3 separate types of components in a web app:</p>
-    <ol>
-      <li><b>Model:</b> The model handles the meat-and-potatoes of the product. It communicates with the database, interpreting and storing data as necessary.</li>
-      <li><b>View:</b> Views manage the visual presentation, taking data from the models and inserting them into templates for the final page presentation.</li>
-      <li><b>Controller:</b> All user requests go through the controller which routes the responses to the relevant view and model as needed. </li>
-    </ol>
-    <p>How each of these traditionally coordinate together is best described by this graphic <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">from wikipedia</a>:</p>
-    <div class="case-study__images">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg" alt="">
-    </div>
-    <p>I found quickly found that the simplicity provided by the professional MVC frameworks had a lot more working behind the scenes than first meets the eye. For example, I found it easier, in my implementation, to create a separate Model Manager that would handle the creation, search of, and destruction of the Models themselves. This led to a slightly messier flow chart than the textbook one above.</p>
-    <img class="case-study-image" src="../media/projects/recipe-sharing/bbb_mvc_design.png" alt="">
-    <p>First, the user will send a request to index.php via their browser which would immediately forward the request to Router.php. As of this writing, the framework only supports single page apps.</p>
-    <p>The Router.php was responsible for sending the user's request to the correct controller. It would do so with the following steps:</p>
-    <ul>
-      <li>Check the <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">CSRF token</a> is valid.</li>
-      <li>Parse the requested URL for the specific page name.</li>
-      <li>If the parsed page name matches with an existing controller, forward the request to the correct Controller.php file.</li>
-    </ul>
-    <p>The controller would determine the type of request, whether it was a GET or POST. I ended up splitting POST requests into either PUT, CREATE, or DELETE, depending on a hidden REQUEST variables included in the form's POST. For GET requests, the controller would directly initialize the relevant view. For any POST request, the controller would reach out to the model manager and then the view.</p>
-    <p>Models are split into two distinct parts: the model and a model manager. Models handle interaction with the database and represent individual objects (such as a User or Recipe). Model managers, on the other hand, manage the individual model objects. The managers create new model objects, search the database for any given specific object so it could be manipulated or provided to the view which wanted to use it.</p>
-    <p>Finally the views themselves would either take the information provided to it from the controller, or it would request information about model objects from the model manager. It would take that information and hand it to the template. The template would organize the code into the HTML, and the view would replace the index.php's code with the resulting templates.</p>
-    <p>As a side note, templates were broken up into multiple separate sub-templates. This allowed for easy extensibility and prevented me from needing to rewrite code.</p>
 
     <h3 class="h3 case-study__section-title">Image API</h3>
     <p>In order to provide an engaging customer experience, I wanted to provide the user an option to upload mouth-watering images the delicious foods that could be made by their recipes. In order to accomplish this, I needed to create an API that not only could allow for image upload and database storage, but also customizable retrievals.</p>
@@ -137,18 +111,18 @@ function getScaledResource($percentage) {
     <p>All the user would need to do is navigate to an address that looks like this, and a scaled image would be instantly generated:</p>
     <pre>https://example.com/index.php?page=image&id=6&width=100&height=100</pre>
 
-    <h3 class="h3 case-study__section-title">Database Management</h3>
-    <p>Very quickly, I realized that I was constantly rewriting SQL queries. In an effort to make my life easier, I spun off all queries into an internal DBManager interface.</p>
-    <p>This interface would manage all of the interactions with the database. It made the initial connection to the DB, would format the queries, and send it along. I opted to use PDO as the database manager for this tool.</p>
-    <p>In order to keep things as simple as possible, the DBManager would create a new instance of itself, generate a connection to the database, submit the query, and return the result. This method ended up being the most convenient pattern used across the site.</p>
     
     <h3 class="h3 case-study__section-title">Takeaway</h3>
-    <p>Developing the entire framework from scratch was a bit task to chew. I learned a lot doing it, and I would recommend others give it a try themselves. However, if you are trying to create a production ready environment, just use a well known and vetted framework!</p>
-    
+    <ul>
+      <li>This was my first project in PHP and I certainly learned a lot about the language and using built its libraries.</li>
+      <li>I focused on backend development for project, as well as the <a href="boffmvc.html">BoffMVC framework</a>. This led to a suffering of the frontend design. From this I learned the importance of taking the time to develop a layout prototype first.</li>
+    </ul>
+
 
     <img class="case-study-image" src="../media/projects/recipe-sharing/boffbakery_on_desk_mockup.png" alt="">
     <div class="btn-group flex flex__center-full">
-      <a href="https://github.com/mwaboff/boff-bakery-recipes" class="btn btn__primary btn__dark-text btn__big" target="_blank">View Code</a>
+      <a href="https://recipe.mwaboff.com/" class="btn btn__primary btn__dark-text btn__big" target="_blank"><span>Live Site</span></a>
+      <a href="https://github.com/mwaboff/BoffRecipes" class="btn  btn__big" target="_blank">View Code</a>    
     </div>
 
  

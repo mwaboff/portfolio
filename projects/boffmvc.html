@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Michael Aboff - Projects - Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/colors.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/case_study.css">
+
+</head>
+<body>
+
+<div id="navbar__full_page_close" class="hidden"></div>
+<header id="header" class="flex flex__center-full navbar__clear-background">
+  <div class="flex flex__center-horizontal">
+  <div class="global-width flex flex__space-between">
+    <a href="../index.html#" id="navbar__logo">Michael Aboff</a>
+    <div id="navbar">
+      <a href="javascript:void(0)" id="navbar__hamburger">☰</a>
+      <div id="navbar__link-wrapper" class="hidden-menu">
+        <a href="../index.html#" class="navbar__link">Home</a>
+        <a href="../index.html#projects" class="navbar__link">Projects</a>
+        <a href="../index.html#about" class="navbar__link">About</a>
+        <a href="../index.html#contact" class="navbar__link">Contact</a>
+        <a href="../media/michael_aboff_resume.pdf" target="_blank" class="navbar__link">Resume</a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<section id="home" class="section flex flex__center-full flex__column case-study__hero_section"  style="background-image: url('../media/projects/recipe-sharing/boffbakery_on_desk_mockup.png')">
+  <div class="hero__bkg-overlay z-idx-5"></div>
+  <div class="global-width  z-idx-10">
+    <div class="info-text">
+      <div class="hero__title">
+        <h1 class="h1"> <span class="emphasized">BoffMVC - PHP MVC Framework</span> <span class="inline-block">- Case Study</span></h1>
+        <div class="project-title-wrap">
+          <div class="">PHP, MySQL, Javscript, CSS3, HTML5</div>
+        </div>
+      </div>
+      <div class="project-info flex flex__center-vertical">
+        
+        <div class="project-tldr">
+          <div class="project-tldr__title">Notable Points</div>
+          <ul class="project-tldr__list">
+            <li>Custom MVC Framework</li>
+            <li>Easy database interface</li>
+            <li>Automatic routing system</li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <a href="https://github.com/mwaboff/BoffMVC" class="btn btn__primary btn__dark-text btn__big" target="_blank">View Code</a>
+          <a href="https://mvc.mwaboff.com/" class="btn btn__big" target="_blank"><span>Demo Site</span></a>
+        </div>
+    </div>
+      
+  </div>
+    
+</section>
+
+
+<section id="case-study" class="section flex flex__center-full flex__column">
+  <div class="global-width">
+    
+    <h3 class="h3 case-study__section-title">Intro</h3>
+    <p>I really wanted to challenge myself with this project from a backend perspective with this project. I have used popular MVC frameworks in the past, Django and Ruby on Rails, but I always struggled with fully grasping the model. So I decided to build one myself, without any 3rd party tools.</p>
+
+    <h3 class="h3 case-study__section-title">Custom Model-View-Controller Framework</h3>
+    <p>Having had experience with the MVC design pattern in the past, I knew the basics behind it's structure. For any of you unaware, MVC stands for Model-View-Controller. Each of these terms identify the 3 separate types of components in a web app:</p>
+    <ol>
+      <li><b>Model:</b> The model handles the meat-and-potatoes of the product. It communicates with the database, interpreting and storing data as necessary.</li>
+      <li><b>View:</b> Views manage the visual presentation, taking data from the models and inserting them into templates for the final page presentation.</li>
+      <li><b>Controller:</b> All user requests go through the controller which routes the responses to the relevant view and model as needed. </li>
+    </ol>
+    <p>How each of these traditionally coordinate together is best described by this graphic <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">from wikipedia</a>:</p>
+    <div class="case-study__images">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/MVC-Process.svg" alt="">
+    </div>
+    <p>I found quickly found that the simplicity provided by the professional MVC frameworks had a lot more working behind the scenes than first meets the eye. For example, I found it easier, in my implementation, to create a separate Model Manager that would handle the creation, search of, and destruction of the Models themselves. This led to a slightly messier flow chart than the textbook one above.</p>
+    <img class="case-study-image" src="../media/projects/recipe-sharing/bbb_mvc_design.png" alt="">
+    <p>First, the user will send a request to index.php via their browser which would immediately forward the request to Router.php. As of this writing, the framework only supports single page apps.</p>
+    <p>The Router.php was responsible for sending the user's request to the correct controller. It would do so with the following steps:</p>
+    <ul>
+      <li>Check the <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">CSRF token</a> is valid.</li>
+      <li>Parse the requested URL for the specific page name.</li>
+      <li>If the parsed page name matches with an existing controller, forward the request to the correct Controller.php file.</li>
+    </ul>
+    <p>The controller would determine the type of request, whether it was a GET or POST. I ended up splitting POST requests into either PUT, CREATE, or DELETE, depending on a hidden REQUEST variables included in the form's POST. For GET requests, the controller would directly initialize the relevant view. For any POST request, the controller would reach out to the model manager and then the view.</p>
+    <p>Models are split into two distinct parts: the model and a model manager. Models handle interaction with the database and represent individual objects (such as a User or Recipe). Model managers, on the other hand, manage the individual model objects. The managers create new model objects, search the database for any given specific object so it could be manipulated or provided to the view which wanted to use it.</p>
+    <p>Finally the views themselves would either take the information provided to it from the controller, or it would request information about model objects from the model manager. It would take that information and hand it to the template. The template would organize the code into the HTML, and the view would replace the index.php's code with the resulting templates.</p>
+    <p>As a side note, templates were broken up into multiple separate sub-templates. This allowed for easy extensibility and prevented me from needing to rewrite code.</p>
+
+    <h3 class="h3 case-study__section-title">Database Management</h3>
+    <p>Very quickly, I realized that I was constantly rewriting SQL queries. In an effort to make my life easier, I spun off all queries into an internal DBManager interface.</p>
+    <p>This interface would manage all of the interactions with the database. It made the initial connection to the DB, would format the queries, and send it along. I opted to use PDO as the database manager for this tool.</p>
+    <p>In order to keep things as simple as possible, the DBManager would create a new instance of itself, generate a connection to the database, submit the query, and return the result. This method ended up being the most convenient pattern used across the site.</p>
+
+    <h3 class="h3 case-study__section-title">Takeaway</h3>
+    <ul>
+      <li>Developing the entire framework from scratch was a bit task to chew. I learned a lot doing it, and I would recommend others give it a try themselves.</li>
+      <li>Perhaps the largest mistake I made was developing this while I was building out the <a href="boffrecipes.html">BoffRecipes website</a> and the code became intertwined. While this helped me build only what I needed as I needed it, it meant it would be difficult to use this for any other project. In the future, I should separately design a framework and develop it in parallel, not apart of the same project.</li>
+    </ul>
+    
+
+    <img class="case-study-image" src="../media/projects/recipe-sharing/boffbakery_on_desk_mockup.png" alt="">
+    <div class="btn-group flex flex__center-full">
+      <a href="https://github.com/mwaboff/BoffMVC" class="btn btn__primary btn__dark-text btn__big" target="_blank">View Code</a>
+      <a href="https://mvc.mwaboff.com/" class="btn btn__big" target="_blank"><span>Demo Site</span></a>
+    </div>
+ 
+  </div>
+</section>
+
+
+
+<footer id="footer" class="section flex flex__center-full flex__column">
+  <!-- <hr class="footer-hr"> -->
+  <p>© 2020 Michael Aboff.</p>
+  <p>Crafted from scratch with <span class="emphasized"><3</span>.</p>
+</footer>
+
+<script src="../js/navbar.js"></script>
+</body>
+</html>
