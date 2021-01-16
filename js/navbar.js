@@ -47,7 +47,8 @@ class Navbar {
     };
 
     toggleBackground() {
-        if (window.pageYOffset >= this.bkg_change_location) {
+        // if (window.pageYOffset >= this.bkg_change_location) {
+        if (window.pageYOffset > 0) {
             this.header.classList.remove("navbar__clear-background");
         } else {
             this.header.classList.add("navbar__clear-background");
