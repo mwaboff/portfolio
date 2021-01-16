@@ -239,15 +239,28 @@
 </section>
 
 <section id="contact" class="section flex flex__center-full flex__column">
-  <h1 class="h1 section-title">Contact</h1>
-  <div class="contact-info">
-    Send me a ping, I'm excited to see what we can accomplish together!
+  <div class="global-width flex flex__center-horizontal">
+    <h1 class="h1 section-title">Contact</h1>
+    <div class="contact-info">
+      Send me a ping, I'm excited to see what we can accomplish together!
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/maylvwyy" method="POST" >
+      <label for="_replyto">Your Email:</label>
+      <input type="email" name="_replyto" required>
+      <label for="message">Your Message:</label>
+      <textarea name="message" required></textarea>
+      <button class= "btn btn__primary btn__dark-text btn__big" type="submit">Send Email</button>
+
+    </form>
+  
   </div>
+</div>
+
   <div class="btn-group">
     <a href="mailto:mwaboff@gmail.com" class="btn btn__primary btn__dark-text btn__big" target="_blank">Email</a>
     <a href="https://www.linkedin.com/in/mwaboff/" class="btn btn__big" target="_blank">LinkedIn</a>
     <a href="https://github.com/mwaboff" class="btn btn__big" target="_blank">Github</a>
-  </div>
+
   
 </section>
 
