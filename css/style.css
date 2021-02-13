@@ -384,11 +384,12 @@ blockquote {
 
 @media screen and (min-width: 600px) {
   #home { text-align: left; }
-  #hero {   background-position: right top;  }
-
-
+  #hero { background-position: right top; }
 }
 
+@media screen and (min-width: 1024px) {
+  .hero__tagline { max-width: 550px; }
+}
 
 
 /* Project Section */
